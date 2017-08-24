@@ -1,0 +1,36 @@
+<graphml>
+ <graph>
+  <node id="1" name="Athina"/>
+  <node id="2" name="Thessaloniki"/>
+  <node id="3" name="Aleksandroupoli"/>
+  <node id="4" name="Ayvalik"/>
+  <node id="5" name="Irakleio"/>
+  <node id="6" name="Kalamata"/>
+  <node id="7" name="Patra"/>
+  <node id="8" name="Iwannina"/>
+  <node id="9" name="Larissa"/>
+  <edge source="1" target="2" cost="5" time="1"/>
+  <edge source="1" target="9" cost="2" time="1"/>
+  <edge source="1" target="7" cost="2" time="1"/>
+  <edge source="1" target="6" cost="3" time="1"/>
+  <edge source="1" target="5" cost="10" time="1"/>
+  <edge source="1" target="4" cost="8" time="1"/>
+  <edge source="1" target="3" cost="10" time="1"/>
+  
+  <edge source="2" target="8" cost="1" time="1"/>
+  <edge source="2" target="3" cost="3" time="1"/>
+  <edge source="2" target="9" cost="1" time="1"/>
+
+  <edge source="8" target="7" cost="3" time="1"/>
+  
+  <edge source="7" target="1" cost="2" time="1"/>
+  <edge source="7" target="6" cost="2" time="1"/>
+  
+  <edge source="6" target="5" cost="4" time="2"/>
+  
+  <edge source="5" target="3" cost="15" time="1"/>
+
+  
+
+ </graph>
+</graphml>
