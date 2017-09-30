@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8"
+><body>
+
+	<div id="map" style="width:650px;height:450px;background:black;"></div>
+
+	<script>
+		var map;
+		function myMap() {
+			var mapOptions = {
+				center: new google.maps.LatLng(38.149677506825476, 23.69888304999995),
+				zoom: 6,
+				mapTypeId: google.maps.MapTypeId.ROADMAP,
+				width:"auto"
+			}
+
+			var bounds = new google.maps.LatLngBounds();
+
+			map = new google.maps.Map(document.getElementById("map"), mapOptions);
+
+			var locations = [
+			['Ασπροπυργός', 38.149677506825476, 23.69888304999995],
+			['Αλεξανδρούπολη', 40.8553705,25.8618164 ],
+			['Πάτρα', 38.2252352,21.7391968],
+			['Λάρισα', 39.6437676,22.412109399999963],
+			['Ιωάννινα', 39.6818260, 20.8630371],
+			['Θεσσαλονίκη', 40.672306,22.9394531],
+			['Καλαμάτα', 37.0420244,22.1209717],
+			['Ηράκλειο', 35.3397743,25.1477051 ],
+			['Μυτηλίνη', 39.0916996,26.53472899999997]
+			];
+
+
+			var marker, i;
+
+			var infowindow = new google.maps.InfoWindow();
+			var infowindowcontent ;
+
+			for(i=0; i<locations.length; i++){
+				marker = new google.maps.Marker({
+					position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+					map: map,
+					title: locations[i][0] 
+				});
+
+
+				google.maps.event.addListener(marker, 'click', (function(marker, i) {
+					return function() {
+						infowindow.setContent(locations[i][0]);
+						infowindow.open(map, marker);
+					}
+				})(marker, i));
+			}
+		}
+	
+
+	</script>
+
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBAzjcnm_Gz7d2m05z5cPUlAb7lIJ6R-4c&callback=myMap"></script>
+<!--
+To use this code on your website, get a free API key from Google.
+Read more at: https://www.w3schools.com/graphics/google_maps_basic.asp
+-->
+</body>
+</html>
