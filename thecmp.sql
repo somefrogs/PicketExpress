@@ -5,13 +5,13 @@ create table employees(
 	id int unsigned not null auto_increment,
 	afm char(11) default '0',
 	phone int unsigned default '0',
-	name varchar(250) default'unknown',
-	surname varchar(250) default'unknown',
+	name varchar(250) default 'unknown',
+	surname varchar(250) default 'unknown',
 	primary key(id)
 	)Engine=InnoDB;
 create table login(
 	id int unsigned not null,
-	username varchar(250) default'unset',
+	username varchar(250) default 'unset',
 	pass varchar(250) default 'unset',
 	ptype enum('1','2','3'),
 	primary key(id),
@@ -21,7 +21,7 @@ create table login(
 	)Engine=InnoDB;
 create table transit_hubs(
 	th_id int unsigned not null auto_increment,
-	name varchar(250) default'unset',
+	name varchar(250) default 'unset',
 	street varchar(250) default 'unset',
 	stnum int unsigned not null,
 	city varchar(250) default 'unset',
@@ -31,7 +31,7 @@ create table transit_hubs(
 	)Engine=InnoDB;
 create table local_stores(
 	ls_id int unsigned not null auto_increment,
-	name varchar(250) default'unset',
+	name varchar(250) default 'unset',
 	street varchar(250) default 'unset',
 	stnum int unsigned not null,
 	city varchar(250) default 'unset',
