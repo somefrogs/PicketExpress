@@ -90,7 +90,7 @@ create table shipment(
 create table trackhistory(
 	tracknumber varchar(7) not null,
 	transitnode int unsigned not null,
-	past_through bit,
+	past_through bit default 0,
 
 	primary key(tracknumber,transitnode),
 	foreign key(tracknumber) references shipment(tracknumber)
