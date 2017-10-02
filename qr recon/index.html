@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style type="text/css">
+html, body {
+  /*overflow:hidden;*/
+  height: 100%;
+  margin: 0;
+  display: grid;
+  grid-template-rows: 1fr;
+}
+
+/*#wrapper {
+   
+  }*/
+  .full_container {
+    min-height: 100%;
+  }
+  #popup {
+    text-align: center;
+  /*width:100%; 
+  height:100%;*/
+  position:absolute;
+  z-index:1;
+  top:0;
+  left:0;
+  width:100%; 
+  height:100%;
+  background:#606060;
+  opacity: 0.75;
+  visibility: hidden;
+}
+#preview {
+  position:absolute;
+  z-index:-1;
+  top:0;
+  left:0;
+  width:100%; 
+  height:100%;
+  background:#383838;
+}
+/*#hey { 
+ position: relative; 
+ top: 200px; 
+ left: 0; 
+ width: 100%; 
+ }*/
+ /*//////////////////////*/
+/*#cont {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 10px;
+  text-align: center;
+  height: 100%;
+}
+#done h1 {
+  font-family: "Courier";
+}
+
+#hideb{
+  margin:0 auto;
+  border-radius: 3px;
+  background:#33B35A;
+  color:black;
+  border: none;
+  
+  padding: 10px 20px;
+  font-size: 20px; 
+  word-wrap: break-all;
+  commented display:inline-block
+
+#shitme{
+
+  margin:0 auto; 
+  width:35vw; 
+  
+  text-align:center;
+  font-family:'Monospace';
+  
+  border:1px solid #303030;
+  border-width: 2px; 
+  
+  word-break: break-all;
+}
+*/
+/*////////////////////*/
+
+#forma{
+  display:grid;
+  grid-template-columns:1fr;
+  grid-gap:10px;
+  text-align:center;
+  height:100%;
+  z-index:2;
+
+}
+#tit h1 {
+  font-family:'Courier';
+}
+#scannedqr
+{
+
+  margin:0 auto; 
+  width:35vw; 
+  
+  text-align:center;
+  font-family:'Monospace';
+  
+  border:1px solid #303030;
+  border-width: 2px; 
+  
+  word-break: break-all;
+
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  /*display:grid;
+  grid-template-columns: 1fr;
+  height: 100%;*/
+}
+
+
+#sendForm{
+  margin:0 auto;
+  border-radius: 3px;
+  background:#33B35A;
+  color:black;
+  border: none;
+  
+  /*padding: 10px 20px;*/
+  font-size: 20px; 
+  word-wrap: break-all;
+  /*   display:inline-block;  */
+}
+#correctbut{
+  display:grid;
+  grid-template-columns: 1fr;
+  height: 100%;
+}
+#okscreen {
+  display: grid;
+  grid-template-colmns: 1fr;
+  grid-gap: 10px;
+  /*text-align: center;*/
+  height: 100%;
+  
+
+  display: none;
+}
+#done h1 {
+  font-family: "Courier";
+}
+
+#hideb{
+  margin:0 auto;
+  border-radius: 3px;
+  background:#33B35A;
+  color:black;
+  border: none;
+  
+  padding: 10px 20px;
+  font-size: 20px; 
+  word-wrap: break-all;
+  /*   display:inline-block;  */
+}
+
+
+</style>
+
+<head>
+  <title>Mi applicaziona del failmus</title>
+  <script src="jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="instascan.min.js"></script>
+</head>
+<body>
+  <div class="full-container">
+
+   <video id="preview"> </video>
+   <!-- <p id="hey">Scanning</p> -->
+   <div id="popup">
+
+    <!-- <form action="#"> -->
+      <div id ="forma">
+        <div id="tit">
+          <h1> QR code detected:<br></h1>
+        </div>
+        <div id="scannedqr">
+
+          <!-- <div></div> -->
+          <h2 id="qrc">Scanning</h2>
+          <!-- <div></div> -->
+          
+        </div>
+        <!-- <input id="sendForm" type="submit" value="Inform Databasio"> -->
+        <div id="correctbut">
+          <div></div>
+          <input id="sendForm" type="button" value="Inform Databasio">
+          <div></div>
+        </div>
+      </div>
+      <!-- </form> -->
+      <div id="okscreen">
+        <div></div>
+        <div id="done">
+          <h1> Everything OK<br></h1>
+        </div>
+        <div>
+          <input id="hideb" type="button" value="Continue Trolling">
+        </div>
+        <div></div>
+      </div>
+
+    </div>
+    <script type="text/javascript">
+
+      var qrcode =0;
+      let scanner = new Instascan.Scanner({ video: document.getElementById('preview') });
+      scanner.addListener('scan', function (content) {
+        console.log(content);
+        // document.getElementById('hey').innerHTML = "Scanned:"+content;
+        qrcode = content;
+        document.getElementById('qrc').innerHTML = content;
+        //alert('Scanned some shit');
+        document.getElementById('popup').style.visibility = "visible";
+      });
+      // document.getElementById('sendForm').addEventListener("click", function(){
+      //   document.getElementById('forma').style.display = "none";
+      //   document.getElementById('okscreen').style.display = "block";
+      // }); 
+
+      document.getElementById('hideb').addEventListener("click", function(){
+        document.getElementById('popup').style.visibility = "hidden";
+        document.getElementById('forma').style.display = "block";
+        document.getElementById('okscreen').style.display = "none";
+        $('html').css({"display":"grid", "grid-template-columns":"1fr"});
+        $('body').css({"display":"grid", "grid-template-columns":"1fr"});
+        $('#forma').css({"display":"grid", "grid-template-columns":"1fr", "grid-gap":"10px"});
+        $('#correctbut').css({"display":"grid", "grid-template-columns":"1fr"});
+
+
+      }); 
+      Instascan.Camera.getCameras().then(function (cameras) {
+        if (cameras.length > 0) {
+          scanner.start(cameras[0]);
+        } else {
+          console.error('No cameras found.');
+        }
+      }).catch(function (e) {
+        console.error(e);
+      });
+
+      $("#sendForm").on("click",sendInfo);
+      var request;
+      function sendInfo() {
+        request = $.ajax({                    
+          url: 'qr_rec_ajax.php',     
+          type: 'post', // performing a POST request
+          data : {
+          qrc : qrcode // will be accessible in $_POST['data1']
+          },
+          dataType: 'json',                   
+          success: getInfo
+});
+
+
+      }
+
+
+
+      function getInfo(data) {
+
+        var obj = jQuery.parseJSON( data );
+
+        $('#done').innerHTML = $obj.status; 
+          document.getElementById('forma').style.display = "none";
+          document.getElementById('okscreen').style.display = "block";
+        
+      }
+
+
+
+
+    </script>
+  </body>
+  </html>
+
+

@@ -143,50 +143,20 @@ insert into transit_hubs(th_id,name)values
 	(9,'Heraklion');
 
 
--- 	('Alexandroupoli'),
--- 	('Heraklion'),
--- 	('Aspropyrgos'),
--- 	('Patra'),
--- 	('Ioannina'),
--- 	('Thessaloniki'),
--- 	('Larisa'),
--- 	('Kalamata'),
--- 	('Mytilini');
--- 	/* graph contents are
--- 0: iwannina 
--- 1: thessaloniki
--- 2: aleksandroupoli
--- 3: larissa
--- 4: lesvos
--- 5: patras
--- 6: athina
--- 7: kalamata
--- 8: iraklion
--- */
-
--- NULL,
--- NULL,
--- NULL,
--- NULL,
--- NULL,
--- NULL,
--- NULL,
--- NULL,
--- NULL,
 
 insert into local_stores(ls_id, name, th_id) values 
 	(NULL,'Bleyk-Fleyk','6'),#sti thesaloniki
 	(NULL,'Make-Make','3');#stin athina(aspropyrgos)
 
 insert into th_employees values 
-	('3','3'),#poios empl se poio th 
-	('4','7'),
-	('5','6');
+	('4','6'),#poios empl se poio th 
+	('5','3'),
+	('6','1');
 
 
 insert into ls_employees values 
-	('1','2'),#poios empl se poio ls(o 1 sto ls 1 to opoio eksupureteitai apo to th 2(athina))
-	('2','1');
+	('2','2'),#poios empl se poio ls(o 1 sto ls 1 to opoio eksupureteitai apo to th 2(athina))
+	('3','1');
 
 
 # ta upoloipa einai i mama sou sta tessera
