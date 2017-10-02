@@ -44,7 +44,6 @@ if(isset($_POST['commit']))
 	{
 
 		if($_SESSION['privilege'] == '1') {
-			echo 'we come here';
 			$user->redirect('admin.php');
 		} else
 		if ($_SESSION['privilege'] == '2'){
@@ -60,7 +59,6 @@ if(isset($_POST['commit']))
 	}
 	else
 	{
-					echo '123here';
 
 		$error = "Wrong Details !";
 		$user->logout();
