@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible">
+  <title>Administrator</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="all,follow">
+  <!-- Bootstrap CSS-->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <!-- Google fonts - Roboto -->
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
+  <!-- theme stylesheet-->
+  <link rel="stylesheet" href="css/style.default.css" id="theme-stylesheet">
+  <!-- jQuery Circle-->
+  <link rel="stylesheet" href="css/grasp_mobile_progress_circle-1.0.0.min.css">
+  <!-- Custom stylesheet - for your changes-->
+  <link rel="stylesheet" href="css/custom.css">
+  <!-- Font Awesome CDN-->
+  <!-- you can replace it by local Font Awesome-->
+  <script src="https://use.fontawesome.com/99347ac47f.js"></script>
+  <!-- Font Icons CSS-->
+  <link rel="stylesheet" href="https://file.myfontastic.com/da58YPMQ7U5HY8Rb6UxkNf/icons.css">
+  <!--<script>
+    $(document).ready(function(){
+      $('.side-navbar li').click(function(e) {
+        $('.side-navbar li.active').removeClass('active');
+        var $this = $(this);
+        if (!$this.hasClass('active')) {
+          $this.addClass('active');
+        }
+        e.preventDefault();
+      });
+    });
+  </script>-->
+</head>
+<body>
+  <!-- Side Navbar -->
+  <nav class="side-navbar">
+    <div class="side-navbar-wrapper">
+      <div class="sidenav-header d-flex align-items-center justify-content-center">
+        <div class="sidenav-header-inner text-center"><img src="img/pasalos.jpeg" alt="person" class="img-fluid rounded-circle">
+          <h2 class="h5 text-uppercase">Administrator</h2><span class="text-uppercase">Experts Team</span>
+        </div>
+        <div class="sidenav-header-logo"><a href="index.html" class="brand-small text-center"> <strong>E</strong><strong class="text-primary">T</strong></a>
+        </div>
+      </div>
+      <div class="admin-menu">
+        <ul id="side-main-menu" class="side-menu list-unstyled">                  
+          <li onclick=""><a href="admin_control_panel_ls.html"> <span>Local Stores</span></a></li>
+          <li class="active"> <a href=""><span>Employees</span></a></li>
+        </ul>
+      </div>        
+    </nav>
+    <div class="page home-page">
+      <!-- navbar-->
+      <header class="header">
+        <nav class="navbar">
+          <div class="container-fluid">
+            <div class="navbar-holder d-flex align-items-center justify-content-between">
+              <div class="navbar-header"><a id="toggle-btn" href="#" class="menu-btn"><i class="icon-bars"> </i></a><a href="index.html" class="navbar-brand">
+                <div class="brand-text hidden-sm-down"><span>Experts </span><strong class="text-primary">Team</strong></div></a></div>
+                <ul class="nav-menu list-unstyled d-flex flex-md-row align-items-md-center">
+                  <ul aria-labelledby="notifications" class="dropdown-menu">                      
+                    <li><a rel="nofollow" href="#" class="dropdown-item d-flex"> 
+                      <div class="msg-body">                            
+                      </div></a></li>                                                
+                    </ul>
+                    <li class="nav-item"><a href="logout.php" class="nav-link logout">Logout<i class="fa fa-sign-out"></i></a></li>
+                  </ul>
+                </div>
+              </div>
+            </nav>
+          </header>
+          
+          <!-- Updates Section -->
+          <footer class="main-footer">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-sm-6">
+                  <p>Experts Team &copy; 2017</p>
+                </div>                
+              </div>
+            </div>
+          </footer>
+        </div>
+        <!-- Javascript files-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script src="js/tether.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/jquery.cookie.js"> </script>
+        <script src="js/grasp_mobile_progress_circle-1.0.0.min.js"></script>
+        <script src="js/jquery.nicescroll.min.js"></script>
+        <script src="js/jquery.validate.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+        <script src="js/charts-home.js"></script>
+        <script src="js/front.js"></script>
+        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID.-->
+        <!---->
+        <script>
+          (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+          e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+          e.src='//www.google-analytics.com/analytics.js';
+          r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+          ga('create','UA-XXXXX-X');ga('send','pageview');
+        </script>
+      </body>
+      </html>

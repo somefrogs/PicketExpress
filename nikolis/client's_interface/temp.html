@@ -2,6 +2,9 @@
 <html>
 <head>
   <script src = "postal_code.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="//code.jquery.com/ui/1.11.1/jquery-ui.js"></script>
 </head>
 <title>Delivery Express</title>
 <meta charset="UTF-8">
@@ -71,9 +74,7 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
      <p><input class="w3-input w3-padding-8" type="text" name="Αριθμός Παρακολούθησης:" placeholder="Αριθμός Παρακολούθησης"></p>
      <br>
      <p>
-        <button class="w3-button w3-light-grey w3-padding-large" type="submit">
-          SUBMIT
-        </button>
+        <input class="w3-button w3-light-grey w3-padding-large" type="submit" value="Submit"></input>
      </p>
     </form>
  
@@ -83,24 +84,20 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
   <div class="w3-padding-64 w3-content" id="search">
     <h2 class="w3-text-light-grey" >Αναζήτηση κοντινότερου καταστήματος:</h2>
     <hr style="width:620px" class="w3-opacity">
-    <form action="" target="_blank">  <!-- Αναλαμβάνει την αναζήτηση (ajax) -->
+    <form action="" target="_self" method="post">  <!-- Αναλαμβάνει την αναζήτηση (ajax) -->
      <br>
      <h4 class="w3-text-light-grey" >Με βάση τον ταχυδρομικό κώδικα:</h4>
-     <p><input class="w3-input w3-padding-8" type="text" name="Ταχυδρομικός Κώδικας:" placeholder="Ταχυδρομικός Κώδικας" ></p>
+     <p><input class="w3-input w3-padding-8" id="tk" type="text" name="Ταχυδρομικός Κώδικας:" placeholder="Ταχυδρομικός Κώδικας"></p>
      <br>
      <p>
-        <button class="w3-button w3-light-grey w3-padding-large" type="submit" onclick="postal_code_search()">
-          SUBMIT
-        </button>
+        <input class="w3-button w3-light-grey w3-padding-large" type="submit" value="Submit" id="postal_code_search"></input>
      </p>
      <br>  
      <h4 class="w3-text-light-grey" >Διαφορετικά γίνεται και με βάση την πόλη:</h4>
-     <p><input class="w3-input w3-padding-8" type="text" name="Πόλη:" placeholder="Πόλη"></p>
+     <p><input class="w3-input w3-padding-8" id="town" type="text" name="Πόλη:" placeholder="Πόλη"></p>
      <br>
      <p>
-        <button class="w3-button w3-light-grey w3-padding-large" type="submit" onclick="postal_code_search()">
-          SUBMIT
-        </button>
+        <input class="w3-button w3-light-grey w3-padding-large" type="submit" value="Submit" id="town_search"></input>
      </p>
      </form>
    
